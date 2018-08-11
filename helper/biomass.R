@@ -5,6 +5,16 @@
 # ABOVE-GROUND BIOMASS STUFF #
 ##############################
 
+.biomass.heightModel_Palau <- function( diam)
+{
+######################################### #
+#
+# This is a generic model for Palau trees #
+#
+###########################################
+    return( 1.0409 * exp( 0.5120 + 0.783 * log(diam) - 0.0322 * log(diam)*log(diam)  ))
+}
+
 .biomass.heightModel <- function( a,b,c,d,e,f,g,diam)
 {
 ##########################################################
@@ -178,8 +188,432 @@
                 'ht_coef'  = list('a'=0,'b'=0,'c'=1.0514,'d'=.348,'e'=.6056,'f'=0,'g'=-0.0246),	
                 'ht_model' = .biomass.heightModel,
                 'agb_coef' = list('a'=0, 'b'=0,'c'=1,'d'=-2.557 ,'e'=.94,'f'=0), 
-                'agb_model'= .biomass.agbModel_global))
+                'agb_model'= .biomass.agbModel_global),
+               
+	'ADENPA'=list( 'density' = 0.6870,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
 
+	'AGLAMA'=list( 'density' = 0.6590,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'ALPHCA'=list( 'density' = 0.5290,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'ALPICA'=list( 'density' = 0.1000,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'ANACGL'=list( 'density' = 0.7260,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'ATUNRA'=list( 'density' = 0.6650,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'BARRRA'=list( 'density' = 0.4540,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'BUCHEN'=list( 'density' = 0.4110,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'CALLEL'=list( 'density' = 0.3500,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'CALOIN'=list( 'density' = 0.5850,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'CALOPE'=list( 'density' = 0.5760,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'CAMPBR'=list( 'density' = 0.3040,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'CANAHI'=list( 'density' = 0.4900,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'CASEHI'=list( 'density' = 0.6270,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'CELTPA'=list( 'density' = 0.5540,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'CERBFL'=list( 'density' = 0.4340,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'COLOSC'=list( 'density' = 0.3400,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'COMMBA'=list( 'density' = 0.4000,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'DECAPA'=list( 'density' = 0.7220,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'DIOSFE'=list( 'density' = 0.9400,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'DRACMU'=list( 'density' = 0.4180,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'DRYPNI'=list( 'density' = 0.7070,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'ELAEJO'=list( 'density' = 0.4890,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'EUGERE'=list( 'density' = 0.7280,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'EURYJA'=list( 'density' = 0.6200,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'FAGRBE'=list( 'density' = 0.8270,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'FAGRKS'=list( 'density' = 0.7390,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'FICUMI'=list( 'density' = 0.4120,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'FICUPR'=list( 'density' = 0.4120,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'FICUTI'=list( 'density' = 0.4120,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'FINSCH'=list( 'density' = 0.6330,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'FLACRU'=list( 'density' = 0.7500,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'GARCMA'=list( 'density' = 0.7350,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'GIROCE'=list( 'density' = 0.4610,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'GMELPA'=list( 'density' = 0.4900,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'GONICA'=list( 'density' = 0.4400,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'HEDYKO'=list( 'density' = 0.6360,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'HORSIR'=list( 'density' = 0.3690,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'HORSPA'=list( 'density' = 0.4430,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'IXORCA'=list( 'density' = 0.7930,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'MACACA'=list( 'density' = 0.3810,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'MARACO'=list( 'density' = 0.7980,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'MELAMA'=list( 'density' = 0.4400,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'MELIDE'=list( 'density' = 0.4820,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'MORIPE'=list( 'density' = 0.5580,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'MYRSPA'=list( 'density' = 0.7420,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'ORMOCA'=list( 'density' = 0.4300,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'ORMOCO'=list( 'density' = 0.7420,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'OSMONG'=list( 'density' = 0.3700,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'OSMOOL'=list( 'density' = 0.3700,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'OSMOPA'=list( 'density' = 0.3700,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'PANDAI'=list( 'density' = 0.3310,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'PHALNI'=list( 'density' = 0.5140,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'PHYLMA'=list( 'density' = 0.6180,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'PHYLOT'=list( 'density' = 0.6180,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'PHYLPA'=list( 'density' = 0.6180,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'PINAIN'=list( 'density' = 0.5570,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list(),
+			'agb_model'= .biomass.agbModel_ferns),
+
+	'PLANOB'=list( 'density' = 0.7020,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'PREMSE'=list( 'density' = 0.5500,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'PSYCLE'=list( 'density' = 0.5640,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'RHUSTA'=list( 'density' = 0.3700,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'SALACH'=list( 'density' = 0.7600,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'SEMEVE'=list( 'density' = 0.3570,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'SPHANI'=list( 'density' = 0.2060,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'SYMPRA'=list( 'density' = 0.5310,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'SYZYCU'=list( 'density' = 0.6730,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'TIMOMO'=list( 'density' = 0.5940,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'TIMOSU'=list( 'density' = 0.5940,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'TRICLE'=list( 'density' = 0.3130,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet),
+
+	'WIKSEL'=list( 'density' = 0.5140,
+			'ht_coef'  = list(),
+			'ht_model' = .biomass.heightModel_Palau,
+			'agb_coef' = list('a'=0, 'b'=0,'c'=0,'d'=0 ,'e'=0,'f'=0,'dbh_cutoff'=-1),
+			'agb_model'= .biomass.agbModel_S1_wet))
+
+
+###############
+###############
+###############
 .biomass.Pn_AGB = list(
  'CHAMUL'=list( 'density' = 0.75,	
                 'ht_coef'  = list('a'=0,'b'=0,'c'=1.0514,'d'=.348,'e'=.6056,'f'=0,'g'=-0.0246),	
@@ -267,6 +701,6 @@
                 'agb_coef' = list('a'=0, 'b'=0,'c'=1,'d'=-2.187 ,'e'=.916,'f'=0), 
                 'agb_model'= .biomass.agbModel_global))
 
-
+ 
 
 

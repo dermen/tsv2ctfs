@@ -118,9 +118,10 @@ source('biomass.R')
         sp_info     = AGB_map[[sp]]
         density     = sp_info$"density" #g / cm^3
         dbh         = diameter[i] # cm
-        
+       
         height_coef = sp_info$"ht_coef"
         height_mdl  = sp_info$"ht_model"
+        #print(sp, sp_info, dbh, density, height_coef, height_mdl)
         height      = do.call(height_mdl, c(height_coef,'diam'= dbh)  ) # meters
         
         agb_coef    = sp_info$"agb_coef"
