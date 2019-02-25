@@ -1,6 +1,6 @@
-###The tsv2ctfs repository
+### The tsv2ctfs repository
 
-##Contents 
+## Contents 
 
 * starter.R
   * A function which loads all of the pre-computed data
@@ -38,7 +38,7 @@
   * Navigate to each file within the github website to preview it. The column naming schemes here are **ESSENTIAL**. 
   * We are currenty lacking elevation data for Palamanui
 
-##Loading the pre-computed HIPPNET data into R
+## Loading the pre-computed HIPPNET data into R
 
 1. Download th tsv2ctfs repo [here](https://github.com/treelover/tsv2ctfs/archive/master.zip), or using the **Download Zip** button to the right. 
 2. Unzip and move the folder *tsv2ctfs* to a convenient location.
@@ -111,7 +111,7 @@ It has the following usage:
 
 ###tsv2ctfs
 ----------
-#####Arguments
+##### Arguments
 * **plotName**: prefix that will be applied to all of the ctfs R data files
 * **master\_fileName**: tsv version of the master dataset (use excel to open the xlsx files and save as tsv, then put in the data/ subfolder)
 * **taxonomy\_fileName**: tsv version of the taxoomy info (see existing file data/Laupahoehoe\_taxonomy.txt for template)
